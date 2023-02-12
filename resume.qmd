@@ -4,9 +4,7 @@ subtitle: "Research scientist in natural sciences"
 date: ""
 author: ""
 title-block-banner: true
-format: 
-  html:
-    keep-md: true
+format: html
 ---
 
 ```{css}
