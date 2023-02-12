@@ -1,0 +1,26 @@
+date: today
+author: ""
+project:
+  execute-dir: project
+      
+execute:
+  include: true
+  eval: true
+  echo: false
+  error: false
+  warning: false
+  message: false
+
+format:
+  html:
+    embed-resources: true
+    smooth-scroll: true
+    code-fold: false
+    toc: true
+    toc-location: left
+    fig-width: 8
+    fig-height: 7
+    theme: flatly
+    
+bibliography: ref.bib
+csl: jhydrol.csl

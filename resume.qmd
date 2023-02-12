@@ -1,0 +1,267 @@
+---
+title: "Gérard Pastufle"
+subtitle: "Research scientist in natural sciences"
+date: ""
+author: ""
+title-block-banner: true
+format: 
+  html:
+    keep-md: true
+---
+
+```{css}
+/* Browser font: Lato */
+/* Browser font-size: 13.5pt or 18px */
+/* Browser font-color: #212529 */
+/* Browser line-height: 1.5 */
+
+/* Banner color */
+.quarto-title-banner {
+  background: #2c3e50;
+}
+
+/* Lower the margin around h2 */
+h2, .h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Remove margin at the top of main text */
+main {
+  margin-top: 0em;
+}
+
+/* Adapt line height close (1.3) to the one of browser (1.5)*/
+p {
+  line-height: 1.3 !important;
+}
+
+/* Right align */
+.right-align {
+  text-align: right;
+}
+
+/* Remove margin at the bottom of title */
+#title-block-header {
+  margin-block-end: 0rem;
+}
+
+/* Remove meta data information (e.g. Date) */
+#title-block-header.quarto-title-block.default .quarto-title-meta {
+  display: none;
+}
+
+/* Remove toc-title */
+#toc-title {
+  display: none;
+}
+
+/* Remove references title */
+#references {
+  display: none;
+}
+
+/* Remove line of automatic reference section */
+#quarto-appendix.default {
+  padding-top: 0em;
+  margin-top: 0em;
+  border-top: 0px solid #dee2e6;
+}
+
+/* border for figures in Software section */
+.fig-software {
+  border: #dee2e6 1px solid;
+}
+```
+
+```{r}
+#| label: setup
+
+# Load library
+library(tibble)
+library(flextable)
+
+# Load data
+source("script/exp_pro.R")
+source("script/exp_school.R")
+```
+
+::: {.column-margin .right-align}
+![](figures/pp.gif){#pp}
+
+gerard.pastufle@domain-name.net
+
+00-000-000-00
+
+[Google Scholar](https://scholar.google.com/)
+
+[GitHub](https://github.com/)
+
+[ResearchGate](https://www.researchgate.net/)
+:::
+
+## Professional Experience
+
+```{r}
+exp_pro(employer = "Natural History Museum",
+        job = "Lead Scientist", 
+        date = "2019 – present", 
+        city = "Paris (France)", 
+        desc = c(
+    "Oversees the museum's scientific research program and manages a team of researchers and curators",
+    "Conducts research on the evolution and ecology of birds and other vertebrates",
+    "Collaborates with other museums and institutions to study and document biodiversity in different regions of the world"
+  ))
+```
+
+```{r}
+exp_pro(employer = "Smithsonian Institution",
+        job = "Research Scientist", 
+        date = "2017 – 2019", 
+        city = "Washington, D.C. (USA)", 
+        desc = c(
+    "Conducted research on the evolutionary history and biogeography of South American primates using molecular and morphological data",
+    "Developed new methods for analyzing and interpreting genomic data in primates",
+    "Collaborated with other researchers to study the behavior and ecology of primates in their natural habitats"
+  ))
+```
+
+```{r}
+exp_pro(employer = "Max Planck Institute for Evolutionary Anthropology",
+        job = "Postdoctoral Researcher", 
+        date = "2013 – 2017", 
+        city = "Leipzig (Germany)", 
+        desc = c(
+    "Conducted research on the genomic basis of craniofacial diversity in humans and non-human primates",
+    "Used comparative genomics to study the evolution of human-specific traits such as language and brain development",
+    "Developed new methods for analyzing and interpreting genomic data in primates and other animals"
+  ))
+```
+
+```{r}
+exp_pro(employer = "Department of Ecology and Evolutionary Biology, University of California",
+        job = "Graduate Research Assistant", 
+        date = "2008 – 2013", 
+        city = "Los Angeles (USA)", 
+        desc = c(
+    "Conducted research on the phylogenetics and biogeography of Neotropical birds using molecular and morphological data",
+    "Developed new methods for analyzing and interpreting molecular and morphological data in birds",
+    "Collaborated with other researchers to study the behavior and ecology of birds in their natural habitats"
+  ))
+```
+
+## Cursus
+
+```{r}
+exp_school(employer = "University of California, Los Angeles",
+           desc = c("Ph.D. in Ecology and Evolutionary Biology"),
+           date = "2008 – 2013")
+```
+
+```{r}
+exp_school(employer = "Université Pierre et Marie Curie, Paris",
+           desc = c("M.Sc. in Biological Sciences",
+                    "B.Sc. in Biology"),
+           date = "2003 – 2008")
+```
+
+## Expertise & Hobbies
+
+```{r}
+tibble("Programming" = c("Tools", "Language", "Hobbies"),
+       "R, Python, MATLAB" = c("RStudio, Quarto, QGIS, ArcGIS, ImageJ, Endnote",
+                                "French (Native), English (Fluent), Spanish (Proficient), German (Intermediate)",
+                                "Birdwatching, Hiking, Cooking, Piano, Photography")) |> 
+  flextable() |>
+  set_table_properties(layout = "autofit", width = 1) |>
+  padding(part = "all", padding = 1) |> 
+  border_remove() |>
+  bold(part = "all", j = 1) |> 
+  font(part = "all", fontname = "Lato") |>
+  color(part = "all", color = "#212529") |> 
+  fontsize(size = 13.5, part = "header") |>
+  fontsize(size = 13.5, part = "body")
+```
+
+::: {.column-page}
+
+## Publications
+
+::: {.hidden}
+@pastufle2018
+@pastufle2016
+@pastufle2014
+:::
+
+::: {#refs}
+:::
+
+:::
+
+</br>
+
+::: {.column-page}
+
+## Software
+
+### BioClim
+
+:::: {.columns}
+
+::: {.column width="50%"}
+[BioClim](https://bioclim.pastufle.net/) is a software tool designed to model and predict the distribution of species based on environmental variables. 
+
+My contribution:
+
+- Developing and testing the software
+- Writing user guide
+:::
+
+::: {.column width="5%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="45%"}
+![](figures/bioclim.png){.fig-software}
+:::
+
+::::
+
+### AvianTracker
+
+:::: {.columns}
+
+::: {.column width="52%"}
+[AvianTracker](https://aviantracker.pastufle.net/) is a software platform for tracking and analyzing the movements of migratory birds across different regions of the world.
+
+My contribution:
+
+- Developing and testing the software
+- Writing user guide
+:::
+
+::: {.column width="3%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="45%"}
+
+::: {.panel-tabset}
+
+## Map
+
+![](figures/map.png)
+
+## Main interface
+
+![](figures/interface.png)
+
+:::
+
+:::
+
+::::
+
+:::
+
+
